@@ -6,9 +6,9 @@ from tqdm import tqdm
 #### Elliptic dataset ####
 def load_elliptic():
     raw_paths = [
-        'data/elliptic_bitcoin/raw/elliptic_txs_features.csv',
-        'data/elliptic_bitcoin/raw/elliptic_txs_edgelist.csv',
-        'data/elliptic_bitcoin/raw/elliptic_txs_classes.csv',
+        '/Users/lambertusvanzyl/Library/CloudStorage/OneDrive-StellenboschUniversity/Masters/Code repository/Elliptic_dataset/elliptic_txs_features.csv',
+        '/Users/lambertusvanzyl/Library/CloudStorage/OneDrive-StellenboschUniversity/Masters/Code repository/Elliptic_dataset/elliptic_txs_classes.csv',
+        '/Users/lambertusvanzyl/Library/CloudStorage/OneDrive-StellenboschUniversity/Masters/Code repository/Elliptic_dataset/elliptic_txs_edgelist.csv',
                     ]
     feat_df = pd.read_csv(raw_paths[0], header=None)
     edge_df = pd.read_csv(raw_paths[1])

@@ -324,3 +324,37 @@ if __name__ == "__main__":
         AUC_list_gin, AP_list_gin, precision_dict_gin, recall_dict_gin, F1_dict_gin = evaluate_model_deep(ntw_torch, model_gin, test_mask, percentile_q_list=percentile_q_list, n_samples=100, device = device)
         save_results_TI(AUC_list_gin, AP_list_gin, ntw_name+"_gin")
         save_results_TD(precision_dict_gin, recall_dict_gin, F1_dict_gin, ntw_name+"_gin")
+        
+        
+#%%
+import importlib
+
+packages = [
+    "matplotlib_inline",
+    "networkit",
+    "networkx",
+    "numpy",
+    "optuna",
+    "pandas",
+    "pyg_lib",
+    "sklearn",
+    "scipy",
+    "sympy",
+    "torch_cluster",
+    "torch_geometric",
+    "torch_scatter",
+    "torch_sparse",
+    "torch_spline_conv",
+    "torch",
+    "tqdm",
+    "wheel"
+]
+
+for package in packages:
+    try:
+        mod = importlib.import_module(package.replace("-", "_"))
+        version = getattr(mod, "__version__", "Unknown version")
+        print(f"{package}: {version}")
+    except ImportError:
+        print(f"{package}: Not installed")
+# %%
